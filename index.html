@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<title>bibliotheque</title>
+    <meta charset="UTF-8">
+    <script src="libs/angular.js"></script>
+    <script src="app.js"></script>
+    <script src="services/livresFactory.js"></script>
+    <script src="controllers/control1.js"></script>
+    <script src="directives/direct1.js"></script>
+  </head>
+
+<body ng-app="demoApp" >
+    <div ng-controller="DemoController">
+
+        <form name="ajoutLivreFrm">
+        <fieldset>
+          <label for="titre">Titre :  </label><br/>
+          <input id ="titre" type="text" ng-model="newLivre.titre"><br/>
+          <label for="Auteur">Auteur :  </label><br/>
+          <input id ="Auteur" type="text"  ng-model="newLivre.auteur"><br/>
+          <button type="submit" ng-click="addLivre(newLivre)">ajout </button>
+        
+        </fieldset>    
+      </form>
+   
+        <div ng-repeat="livre in livres"> 
+              <div>
+                <livre roman="livre"/>
+              </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
